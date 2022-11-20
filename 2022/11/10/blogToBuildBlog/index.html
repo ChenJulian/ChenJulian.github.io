@@ -121,8 +121,8 @@
                         
                             <div class="blank_box"></div>
                             <span class="meta">
-                                Words <span class="post-count">1.7k</span> and
-                                Reading Time <span class="post-count">6</span> Minutes
+                                Words <span class="post-count">1.8k</span> and
+                                Reading Time <span class="post-count">7</span> Minutes
                             </span>
                             <div class="blank_box"></div>
                             <!-- 不蒜子统计 start -->
@@ -310,6 +310,7 @@ hexo d
 hexo g -d
 </code></pre><p>注意：这里有的同学会出现这种情况</p>
 <p><img src="error1.png" alt="2022-11-10-blogToBuildBlog"></p>
+<p>这里大家要注意这种情况我们看的不是 Error：Spawn Failed 这一行，而是往上看可以看到一行 remote：Repository not found<br>这里说了我们找不到这个仓库，这种问题的出现，很大可能是因为有的同学的 ssh 在部分课程修改后没有改回来。重新设置一遍 github 的 ssh 就能解决这个问题！</p>
 <h4 id="阅读到这里，你就可以在自己的-Github-Pages-相关网址中看到属于自己的博客网站啦！"><a href="#阅读到这里，你就可以在自己的-Github-Pages-相关网址中看到属于自己的博客网站啦！" class="headerlink" title="阅读到这里，你就可以在自己的 Github Pages 相关网址中看到属于自己的博客网站啦！"></a>阅读到这里，你就可以在自己的 Github Pages 相关网址中看到属于自己的博客网站啦！</h4><p>辣么，快去试试看吧！</p>
 <h1 id="笔者在博客美化中做出的修改建议"><a href="#笔者在博客美化中做出的修改建议" class="headerlink" title="笔者在博客美化中做出的修改建议"></a>笔者在博客美化中做出的修改建议</h1><h2 id="修改前的建议"><a href="#修改前的建议" class="headerlink" title="修改前的建议"></a>修改前的建议</h2><ul>
 <li><p>备份 blog 文件夹</p>
@@ -320,6 +321,7 @@ hexo g -d
 <h4 id="blog-config-yml"><a href="#blog-config-yml" class="headerlink" title="blog_config.yml"></a>blog_config.yml</h4><ul>
 <li>大部分内容<br>根据官方仓库教程修改就可以，官方仓库没提到的大部分都是其他配置信息，需要读者额外了解<br>笔者主要将不需要的内容注释掉或修改成 enable: false<br>这里每个人审美不同，可以自由发挥<br>通过单词词义理解一下或者尝试一下不会遇到太大问题，出现问题恢复原来的就行了</li>
 <li>URL<br>请不要修改！！！<br>hexo 官方教程中是要修改这里的。。但是小白别碰就行了。<br>笔者目前也没有弄懂原理。但是不修改就不会出现问题，修改后会报错。这里卡了笔者很久</li>
+<li>comment（评论系统）</li>
 </ul>
 <h4 id="blog-source"><a href="#blog-source" class="headerlink" title="blog\source"></a>blog\source</h4><pre><code>这里可以修改导航页（也就是右上角），点进去文件夹修改index就会知道怎么修改了。不需要的就选择删除。
 </code></pre><h4 id="blog-themes-snail-layout-partial-footer-ejs"><a href="#blog-themes-snail-layout-partial-footer-ejs" class="headerlink" title="blog\themes\snail\layout_partial\footer.ejs"></a>blog\themes\snail\layout_partial\footer.ejs</h4><pre><code>在这里可以将页面低端的powered by内容和star的链接改成自己的github账号信息
@@ -352,11 +354,11 @@ hexo g -d
                 &lt;/p&gt;
 </code></pre><h1 id="04-结语"><a href="#04-结语" class="headerlink" title="04 结语"></a>04 结语</h1><ul>
 <li>由于笔者知识量有限，上文必定有不够完善的地方，希望大家理解。假如有所错漏，希望大家联系我修改，以免误导他人。</li>
-<li><p>且笔者正在被流水线 CPU CPU<br>目前得先安排时间去完成流水线 CPU 的代码编写和调试，博客内容的更多修改和搜寻上文笔者不懂的知识点等计划都得搁浅了。</p>
+<li><p>且笔者正在被流水线 CPU CPU（CPU 完了，来补充博客了！！）<br>目前得先安排时间去完成流水线 CPU 的代码编写和调试，博客内容的更多修改和搜寻上文笔者不懂的知识点等计划都得搁浅了。</p>
 <blockquote>
 <p>包括但不限于：</p>
 <ul>
-<li>博客评论区的完善和探索</li>
+<li>博客评论区的完善和探索(√)</li>
 <li>博客提交百度和谷歌收录</li>
 <li>博客文章右边目录的错误显示</li>
 </ul>
@@ -445,11 +447,11 @@ const myTheme = {
 
 const gitment = new Gitment({
     id: 'Thu Nov 10 2022 16:48:01 GMT+0800', // optional
-    owner: "",
-    repo: "",
+    owner: "ChenJulian",
+    repo: "blog_comment",
     oauth: {
-      client_id: "",
-      client_secret: "",
+      client_id: "107c6f50e9dbf968ced7",
+      client_secret: "28661d2e15d0a21e5d4c3608a2653255b3d5c9b8",
     },
     theme: myTheme,
     // ...
@@ -700,7 +702,7 @@ const gitment = new Gitment({
         
 
         
-            <script type="text/javascript" src="/js/mouse-click.js" content='[&#34;😃&#34;,&#34;🥰&#34;,&#34;😍&#34;,&#34;😜&#34;]' color='[&#34;rgb(121,93,179)&#34; ,&#34;rgb(76,180,231)&#34; ,&#34;rgb(184,90,154)&#34;]'></script>
+            <script type="text/javascript" src="/js/mouse-click.js" content='[&quot;😃&quot;,&quot;🥰&quot;,&quot;😍&quot;,&quot;😜&quot;]' color='[&quot;rgb(121,93,179)&quot; ,&quot;rgb(76,180,231)&quot; ,&quot;rgb(184,90,154)&quot;]'></script>
         
 
         <!-- background effects end -->
@@ -710,6 +712,21 @@ const gitment = new Gitment({
     
         <script src="/js/ribbonDynamic.js"></script>
     
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 
 </html>
