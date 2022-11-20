@@ -321,7 +321,7 @@ hexo g -d
 <h4 id="blog-config-yml"><a href="#blog-config-yml" class="headerlink" title="blog_config.yml"></a>blog_config.yml</h4><ul>
 <li>大部分内容<br>根据官方仓库教程修改就可以，官方仓库没提到的大部分都是其他配置信息，需要读者额外了解<br>笔者主要将不需要的内容注释掉或修改成 enable: false<br>这里每个人审美不同，可以自由发挥<br>通过单词词义理解一下或者尝试一下不会遇到太大问题，出现问题恢复原来的就行了</li>
 <li>URL<br>请不要修改！！！<br>hexo 官方教程中是要修改这里的。。但是小白别碰就行了。<br>笔者目前也没有弄懂原理。但是不修改就不会出现问题，修改后会报错。这里卡了笔者很久</li>
-<li>comment（评论系统）<br>按<a href="https://www.cnblogs.com/Johnson-lin/p/11386877.html" target="_blank" rel="noopener">该教程</a>走就好了</li>
+<li>comment（评论系统）<br>按<a href="https://www.cnblogs.com/Johnson-lin/p/11386877.html" target="_blank" rel="noopener">该教程</a>走就好了<br>但是我报错咧 不清楚。</li>
 </ul>
 <h4 id="blog-source"><a href="#blog-source" class="headerlink" title="blog\source"></a>blog\source</h4><pre><code>这里可以修改导航页（也就是右上角），点进去文件夹修改index就会知道怎么修改了。不需要的就选择删除。
 </code></pre><h4 id="blog-themes-snail-layout-partial-footer-ejs"><a href="#blog-themes-snail-layout-partial-footer-ejs" class="headerlink" title="blog\themes\snail\layout_partial\footer.ejs"></a>blog\themes\snail\layout_partial\footer.ejs</h4><pre><code>在这里可以将页面低端的powered by内容和star的链接改成自己的github账号信息
@@ -358,7 +358,7 @@ hexo g -d
 <blockquote>
 <p>包括但不限于：</p>
 <ul>
-<li>博客评论区的完善和探索(√)</li>
+<li>博客评论区的完善和探索(×)</li>
 <li>博客提交百度和谷歌收录</li>
 <li>博客文章右边目录的错误显示</li>
 </ul>
@@ -371,6 +371,10 @@ hexo g -d
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2022/11/20/CO-theory-1/" data-toggle="tooltip" data-placement="top" title="『计算机组成原理』计组理论考试复习整理-1">&larr; Previous Post</a>
+                    </li>
                     
                     
                 </ul>
@@ -396,74 +400,6 @@ hexo g -d
                 <!-- Sharing -->
 
                 <!-- gitment start -->
-                
-                <hr>
-                <div id="blog_comments"></div>
-
-<!--
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
--->
-<!--
-<link rel="stylesheet" href="/css/gitment.css">
-<script type="text/javascript" src="/js/gitment.js"></script>
--->
-
-<script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.css"/>
-
-<!--
-<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
-<script src="https://billts.site/js/gitment.js"></script>
--->
-
-<script>
-const myTheme = {
-  render(state, instance) {
-    const container = document.createElement('div')
-    container.lang = "en-US"
-    container.className = 'gitment-container gitment-root-container'
-    
-     // your custom component
-    container.appendChild(instance.renderSomething(state, instance))
-    
-    container.appendChild(instance.renderHeader(state, instance))
-    container.appendChild(instance.renderComments(state, instance))
-    container.appendChild(instance.renderEditor(state, instance))
-    //container.appendChild(instance.renderFooter(state, instance))
-    return container
-  },
-  renderSomething(state, instance) {
-    const container = document.createElement('div')
-    container.lang = "en-US"
-    container.className = 'hello_visitor'
-    if (state.user.login) {
-      container.innerText = `Hello ${state.user.login}, Welcome to comment system`
-    }
-    return container
-  }
-}
-
-
-const gitment = new Gitment({
-    id: 'Thu Nov 10 2022 16:48:01 GMT+0800', // optional
-    owner: "ChenJulian",
-    repo: "blog_comment",
-    oauth: {
-      client_id: "107c6f50e9dbf968ced7",
-      client_secret: "bee8f3d2144e0cd06f0d6b19c59e733a7304b21c",
-    },
-    theme: myTheme,
-    // ...
-    // For more available options, check out the documentation below
-  })
-  
-  gitment.render('blog_comments')
-  // or
-  // gitment.render(document.getElementById('comments'))
-  // or
-  // document.body.appendChild(gitment.render())
-</script>
                 
                 <!-- gitment end -->
 
