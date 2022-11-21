@@ -4,25 +4,6 @@
   
     
     <entry>
-      <title>『计算机组成原理』计组理论考试复习整理-1</title>
-      <link href="/2022/11/20/CO-theory-1/"/>
-      <url>/2022/11/20/CO-theory-1/</url>
-      
-        <content type="html"><![CDATA[<h2 id="定点数的表示"><a href="#定点数的表示" class="headerlink" title="定点数的表示"></a>定点数的表示</h2><h3 id="无符号数和有符号数"><a href="#无符号数和有符号数" class="headerlink" title="无符号数和有符号数"></a>无符号数和有符号数</h3><ul><li><strong>无符号数</strong><br>  没有符号位，8位数表示范围0 ~ 2^8^-1即0 ~ 255</li><li><strong>有符号数</strong><br>  有一个符号位</li></ul><h3 id="定点表示"><a href="#定点表示" class="headerlink" title="定点表示"></a>定点表示</h3><p>小数点位置不变</p><ul><li><strong>定点小数</strong><br>纯小数，第一位是符号位,符号位后全是小数位<ul><li>x~0~ = 0 ，最大值 1-2^-n^</li><li>x~0~ = 0 ，最小值 -(1-2^-n^)</li></ul></li><li><strong>定点整数</strong><br>纯整数，第一位是符号位，符号位后全是整数位<ul><li>x~0~ = 0 ，最大值 2^-n^ -1</li><li>x~0~ = 0 ，最小值 -(2^-n^ -1)</li></ul></li></ul><h3 id="原码、补码、反码（有符号位）"><a href="#原码、补码、反码（有符号位）" class="headerlink" title="原码、补码、反码（有符号位）"></a>原码、补码、反码（有符号位）</h3><ul><li><p><strong>原码</strong><br>  第一位符号位，其余位为绝对值</p><ul><li>小数原码<br>[0.1]~原~ = 0.1000000<br>[-0.1]~原~ = 1.1000000  </li><li><p>整数原码<br>[1]~原~ = 00000001<br>[-1]~原~ = 10000001</p><p>不同符号数加法需要先比较绝对值大小，再相减</p></li></ul></li><li><p><strong>补码</strong></p><ul><li>纯小数补码</li><li><p>整数补码<br>  [正]~补~ = 0（符号位），原值<br>  [负]~补~ = 1（符号位），原值取反加一</p><p>整数补码的零唯一，且多一个-2^n^</p></li></ul></li><li><strong>反码</strong><br>  零不唯一，[+0]~反~ = 0.0000,[-0]~反~ = 1.1111</li><li><strong>移码</strong></li></ul><h2 id="定点数的计算"><a href="#定点数的计算" class="headerlink" title="定点数的计算"></a>定点数的计算</h2><h3 id="定点数的移位"><a href="#定点数的移位" class="headerlink" title="定点数的移位"></a>定点数的移位</h3><ul><li><strong>算术移位</strong><br>  有符号位！<br>  符号位不变，无论正负原码都移位后补0，负数反补码会有差异。<br>  注意计算机的负数是由补码表示的，其实就是补充最高位。</li><li><strong>逻辑移位</strong><br>  无符号位<br>  移位都添0</li><li><strong>循环移位</strong></li></ul><h3 id="定点数的加减法"><a href="#定点数的加减法" class="headerlink" title="定点数的加减法"></a>定点数的加减法</h3><ul><li><strong>原码的加减法</strong><ul><li>加法<br>  先判符号位，绝对值加减，再补符号位<br>  溢出位丢掉</li><li>减法<br>  减数符号取反加原码</li></ul></li><li><strong>补码的加减法</strong><br>  计算机普遍采用补码加减<ul><li>补码加减补码等于补码</li><li>符号位参与运算，进位丢掉</li></ul></li></ul><h2 id="符号拓展"><a href="#符号拓展" class="headerlink" title="符号拓展"></a>符号拓展</h2><h2 id="溢出概念和判定方法"><a href="#溢出概念和判定方法" class="headerlink" title="溢出概念和判定方法"></a>溢出概念和判定方法</h2><ul><li><strong>采用一位符号位</strong></li><li><strong>采用双符号位</strong></li></ul><h2 id="定点数的乘法"><a href="#定点数的乘法" class="headerlink" title="定点数的乘法"></a>定点数的乘法</h2><h2 id="定点数的除法"><a href="#定点数的除法" class="headerlink" title="定点数的除法"></a>定点数的除法</h2>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 计算机组成原理 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>『博客搭建』搭建snail主题的github博客踩坑历程回顾及建议</title>
       <link href="/2022/11/10/blogToBuildBlog/"/>
       <url>/2022/11/10/blogToBuildBlog/</url>
