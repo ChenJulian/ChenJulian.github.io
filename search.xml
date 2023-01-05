@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>『MIT 6.172』Lecture 1 Introduction and Matrix Multiplication</title>
+      <link href="/2023/01/05/mit6172-1/"/>
+      <url>/2023/01/05/mit6172-1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>略</p><h1 id="Matrix-Multiplication"><a href="#Matrix-Multiplication" class="headerlink" title="Matrix Multiplication"></a>Matrix Multiplication</h1><p>利用矩阵乘法介绍优化方案</p><p><img src="MatrixMultiplication.png" alt="2023-01-05-mit6172-1"></p><h3 id="采用-Python、Java、C-的运行时间不一样"><a href="#采用-Python、Java、C-的运行时间不一样" class="headerlink" title="采用 Python、Java、C 的运行时间不一样"></a>采用 Python、Java、C 的运行时间不一样</h3><p>Why is Python so slow and C so fast?</p><ul><li>Python is interpreted.</li><li>C is compiled directly to machine code.</li><li>Java is compiled to byte-code, which is then interpreted and just-in-time (JIT) compiled to machine code.</li></ul><h3 id="i、j、k-循环调换位置后运行时间不一样"><a href="#i、j、k-循环调换位置后运行时间不一样" class="headerlink" title="i、j、k 循环调换位置后运行时间不一样"></a>i、j、k 循环调换位置后运行时间不一样</h3><ul><li>cache hits 和 cache misses</li></ul><p><img src="ijk1.png" alt="2023-01-05-mit6172-1"></p><p><img src="ijk2.png" alt="2023-01-05-mit6172-1"></p><p><img src="ijk3.png" alt="2023-01-05-mit6172-1"></p><p><img src="ijk4.png" alt="2023-01-05-mit6172-1"></p><p><img src="ijk5.png" alt="2023-01-05-mit6172-1"></p><h3 id="Clang-优化"><a href="#Clang-优化" class="headerlink" title="Clang 优化"></a>Clang 优化</h3><p>不一定 O3 优化比 O2 优化快，有时候 O2 快，有时候 O3 快</p><h3 id="Parallel-Loops"><a href="#Parallel-Loops" class="headerlink" title="Parallel Loops"></a>Parallel Loops</h3><p>The <strong>cilk_for</strong> loop allows all iterations of the loop to execute in parallel.</p><p>Rule of Thumb Parallelize outer loops rather than inner loops.</p><h3 id="进一步优化-重用数据（tiling）"><a href="#进一步优化-重用数据（tiling）" class="headerlink" title="进一步优化-重用数据（tiling）"></a>进一步优化-重用数据（tiling）</h3><ul><li>Restructure the computation to reuse data in the cache as much as possible. （Cache misses are slow, and cache hits are fast.）</li><li>Try to make the most of the cache by reusing the data that’s already there.</li></ul><h3 id="Parallel-divide-and-conquer"><a href="#Parallel-divide-and-conquer" class="headerlink" title="Parallel divide-and-conquer"></a>Parallel divide-and-conquer</h3><pre><code>cilk_spawn/*The child function call is spawned, meaning it may execute in parallel with the parent caller.*/cilk_sync/*Control may not pass this point until all spawned children have returned.*/</code></pre><h3 id="Compiler-Vectorization（编译矢量化）"><a href="#Compiler-Vectorization（编译矢量化）" class="headerlink" title="Compiler Vectorization（编译矢量化）"></a>Compiler Vectorization（编译矢量化）</h3><p>Many machines don’t support the newest set of vector instructions, however, so the compiler uses vector instructions conservatively by default</p><h3 id="更多方法"><a href="#更多方法" class="headerlink" title="更多方法"></a>更多方法</h3><ul><li>Preprocessing</li><li>Matrix transposition</li><li>Data alignment</li><li>Memory-management optimizations</li><li>A clever algorithm for the base case that uses AVX intrinsic instructions explicitly</li></ul><p>综上优化效果<br><img src="time.png" alt="2023-01-05-mit6172-1"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Performance Engineering Of Software Systems </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>『博客搭建』搭建snail主题的github博客踩坑历程回顾及建议</title>
       <link href="/2022/11/10/blogToBuildBlog/"/>
       <url>/2022/11/10/blogToBuildBlog/</url>
