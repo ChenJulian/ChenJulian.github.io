@@ -280,24 +280,10 @@
 <h2 id="通用建议"><a href="#通用建议" class="headerlink" title="通用建议"></a>通用建议</h2><p>假如你不想遇到奇奇怪怪的 error 提醒，小白最好先不要进行其他配置文件的修改。。</p>
 <h4 id="1、按照snail-主题官方仓库的-README-教程进行到到-Configuration"><a href="#1、按照snail-主题官方仓库的-README-教程进行到到-Configuration" class="headerlink" title="1、按照snail 主题官方仓库的 README 教程进行到到 Configuration"></a>1、按照<a href="https://github.com/dusign/hexo-theme-snail" target="_blank" rel="noopener">snail 主题官方仓库</a>的 README 教程进行到到 Configuration</h4><pre><code>教程前面提到的的建立hexo init blog和cd blog大家已经实现了！只需要在blog文件夹中右键 git bash here就可以了
 </code></pre><h4 id="2、跳到修改本地-config-中-Deployment-的配置信息"><a href="#2、跳到修改本地-config-中-Deployment-的配置信息" class="headerlink" title="2、跳到修改本地_config 中 Deployment 的配置信息"></a>2、跳到修改本地_config 中 Deployment 的配置信息</h4><p>原配置信息</p>
-<pre><code># Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repo:
-    github: github.repository.address
-    coding:coding.repository.address
-  branch: master
-</code></pre><p>配置后信息</p>
-<pre><code># Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repo:
-    github: git@github.com:xxx/xxx.github.io.git
-    coding: https://e.coding.net/xxxxx
-  branch: master
-</code></pre><p>请注意</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span></span><br><span class="line">    <span class="attr">github:</span> <span class="string">github.repository.address</span></span><br><span class="line">    <span class="string">coding:coding.repository.address</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<p>配置后信息</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span></span><br><span class="line">    <span class="attr">github:</span> <span class="string">git@github.com:xxx/xxx.github.io.git</span></span><br><span class="line">    <span class="attr">coding:</span> <span class="string">https://e.coding.net/xxxxx</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<p>请注意</p>
 <ul>
 <li>这里 coding 是指腾讯的<a href="https://coding.net/" target="_blank" rel="noopener">CODING DevOps</a><br>需要读者在免费注册使用后在项目中创建 DevOps 项目并进行选择克隆 https 复制地址信息</li>
 <li><p>我的 github 库地址是利用 ssh 克隆的代码库仓库（电脑之前配置了 github 的 ssh）<br>但我的 coding 库地址是利用 https 克隆的代码库仓库<br>（按照上述步骤搭建的你理应也是这样）</p>
@@ -336,32 +322,10 @@ hexo g -d
 </code></pre><h4 id="blog-themes-snail-layout-partial-footer-ejs"><a href="#blog-themes-snail-layout-partial-footer-ejs" class="headerlink" title="blog\themes\snail\layout_partial\footer.ejs"></a>blog\themes\snail\layout_partial\footer.ejs</h4><pre><code>在这里可以将页面低端的powered by内容和star的链接改成自己的github账号信息
 但笔者由于喜欢更简洁的页面，关掉了底部的转发功能。该文件中其他信息笔者并没有修改。若有需要，请读者自行修改地址、名称等信息。
 </code></pre><p>修改片段前</p>
-<pre><code>&lt;p class=&quot;copyright text-muted&quot;&gt;
-                    Copyright &amp;copy; &lt;%= config.author %&gt; &lt;%= new Date().getFullYear() %&gt;
-                    &lt;br&gt;
-                    Powered by
-                    &lt;a href=&quot;https://github.com/dusign/hexo-theme-snail&quot;&gt;
-                        &lt;i&gt;hexo-theme-snail&lt;/i&gt;
-                    &lt;/a&gt; |
-                    &lt;iframe name=&quot;star&quot; style=&quot;margin-left: 2px; margin-bottom:-5px;&quot; frameborder=&quot;0&quot; scrolling=&quot;0&quot;
-                        width=&quot;100px&quot; height=&quot;20px&quot;
-                        src=&quot;https://ghbtns.com/github-btn.html?user=dusign&amp;repo=hexo-theme-snail&amp;type=star&amp;count=true&quot;&gt;
-                    &lt;/iframe&gt;
-                &lt;/p&gt;
-</code></pre><p>修改片段后（读者只需自行比对便可理解）</p>
-<pre><code>&lt;p class=&quot;copyright text-muted&quot;&gt;
-                    Copyright &amp;copy; &lt;%= config.author %&gt; &lt;%= new Date().getFullYear() %&gt;
-                    &lt;br&gt;
-                    Powered by
-                    &lt;a href=&quot;https://github.com/==ChenJulian==/ChenJulian.github.io.git&quot;&gt;
-                        &lt;i&gt;ChenJulian&lt;/i&gt;
-                    &lt;/a&gt; |
-                    &lt;iframe name=&quot;star&quot; style=&quot;margin-left: 2px; margin-bottom:-5px;&quot; frameborder=&quot;0&quot; scrolling=&quot;0&quot;
-                        width=&quot;100px&quot; height=&quot;20px&quot;
-                        src=&quot;https://ghbtns.com/github-btn.html?user=ChenJulian&amp;repo=ChenJulian.github.io&amp;type=star&amp;count=true&quot;&gt;
-                    &lt;/iframe&gt;
-                &lt;/p&gt;
-</code></pre><h1 id="04-结语"><a href="#04-结语" class="headerlink" title="04 结语"></a>04 结语</h1><ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"copyright text-muted"</span>&gt;</span></span><br><span class="line">  Copyright <span class="symbol">&amp;copy;</span> <span class="tag">&lt;<span class="name">%=</span> <span class="attr">config.author</span> %&gt;</span> <span class="tag">&lt;<span class="name">%=</span> <span class="attr">new</span> <span class="attr">Date</span>()<span class="attr">.getFullYear</span>() %&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">  Powered by</span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://github.com/dusign/hexo-theme-snail"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span>&gt;</span>hexo-theme-snail<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  |</span><br><span class="line">  <span class="tag">&lt;<span class="name">iframe</span></span></span><br><span class="line"><span class="tag">    <span class="attr">name</span>=<span class="string">"star"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">style</span>=<span class="string">"margin-left: 2px; margin-bottom:-5px;"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">frameborder</span>=<span class="string">"0"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">scrolling</span>=<span class="string">"0"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">width</span>=<span class="string">"100px"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">height</span>=<span class="string">"20px"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">src</span>=<span class="string">"https://ghbtns.com/github-btn.html?user=dusign&amp;repo=hexo-theme-snail&amp;type=star&amp;count=true"</span></span></span><br><span class="line"><span class="tag">  &gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>修改片段后（读者只需自行比对便可理解）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"copyright text-muted"</span>&gt;</span></span><br><span class="line">  Copyright <span class="symbol">&amp;copy;</span> <span class="tag">&lt;<span class="name">%=</span> <span class="attr">config.author</span> %&gt;</span> <span class="tag">&lt;<span class="name">%=</span> <span class="attr">new</span> <span class="attr">Date</span>()<span class="attr">.getFullYear</span>() %&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">  Powered by</span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://github.com/==ChenJulian==/ChenJulian.github.io.git"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span>&gt;</span>ChenJulian<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  |</span><br><span class="line">  <span class="tag">&lt;<span class="name">iframe</span></span></span><br><span class="line"><span class="tag">    <span class="attr">name</span>=<span class="string">"star"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">style</span>=<span class="string">"margin-left: 2px; margin-bottom:-5px;"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">frameborder</span>=<span class="string">"0"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">scrolling</span>=<span class="string">"0"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">width</span>=<span class="string">"100px"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">height</span>=<span class="string">"20px"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">src</span>=<span class="string">"https://ghbtns.com/github-btn.html?user=ChenJulian&amp;repo=ChenJulian.github.io&amp;type=star&amp;count=true"</span></span></span><br><span class="line"><span class="tag">  &gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="04-结语"><a href="#04-结语" class="headerlink" title="04 结语"></a>04 结语</h1><ul>
 <li>由于笔者知识量有限，上文必定有不够完善的地方，希望大家理解。假如有所错漏，希望大家联系我修改，以免误导他人。</li>
 <li><p>且笔者正在被流水线 CPU CPU（CPU 完了，来补充博客了！！）<br>目前得先安排时间去完成流水线 CPU 的代码编写和调试，博客内容的更多修改和搜寻上文笔者不懂的知识点等计划都得搁浅了。</p>
 <blockquote>
