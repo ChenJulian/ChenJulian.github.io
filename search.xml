@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>『MIT 6.172』Lecture 3 Bit Hacks</title>
+      <link href="/2023/01/08/mit6172-3/"/>
+      <url>/2023/01/08/mit6172-3/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Bit-Hacks"><a href="#Bit-Hacks" class="headerlink" title="Bit Hacks"></a>Bit Hacks</h1><h3 id="二进制表示"><a href="#二进制表示" class="headerlink" title="二进制表示"></a>二进制表示</h3><h3 id="反补码性质"><a href="#反补码性质" class="headerlink" title="反补码性质"></a>反补码性质</h3><h3 id="八进制、十六进制"><a href="#八进制、十六进制" class="headerlink" title="八进制、十六进制"></a>八进制、十六进制</h3><h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><h3 id="Set-the-kth-Bit"><a href="#Set-the-kth-Bit" class="headerlink" title="Set the kth Bit"></a>Set the k<sup>th</sup> Bit</h3><pre><code>y = x | (1 &lt;&lt; k);</code></pre><h3 id="Clear-the-kth-Bit"><a href="#Clear-the-kth-Bit" class="headerlink" title="Clear the kth Bit"></a>Clear the k<sup>th</sup> Bit</h3><pre><code>y = x &amp;(1 &lt;&lt; k);</code></pre><h3 id="Toggle-the-kth-Bit"><a href="#Toggle-the-kth-Bit" class="headerlink" title="Toggle the kth Bit"></a>Toggle the k<sup>th</sup> Bit</h3><pre><code>y = x ^ (1 &lt;&lt; k);</code></pre><h3 id="Extract-a-Bit-Field"><a href="#Extract-a-Bit-Field" class="headerlink" title="Extract a Bit Field"></a>Extract a Bit Field</h3><pre><code>(x % mask) &gt;&gt; shift;//mask 将待抽取的位 置一</code></pre><p><img src="extract1.png" alt="2023-01-05-mit6172-3"></p><h3 id="Set-a-Bit-Field"><a href="#Set-a-Bit-Field" class="headerlink" title="Set a Bit Field"></a>Set a Bit Field</h3><pre><code>x = (x &amp; ~mask) | (y &lt;&lt; shift);//For safety’s sake:((y &lt;&lt; shift) &amp; mask)</code></pre><p><img src="set1.png" alt="2023-01-05-mit6172-3"></p><h3 id="Swap"><a href="#Swap" class="headerlink" title="Swap"></a>Swap</h3><ul><li><h4 id="Ordinary-Swap"><a href="#Ordinary-Swap" class="headerlink" title="Ordinary Swap"></a>Ordinary Swap</h4><pre><code>  t = x;  x = y;  y = t;</code></pre></li><li><h4 id="No-Temp-Swap"><a href="#No-Temp-Swap" class="headerlink" title="No-Temp Swap"></a>No-Temp Swap</h4><pre><code>  x = x ^ y;  y = x ^ y;  x = x ^ y;</code></pre></li></ul><p>  <img src="swap1.png" alt="2023-01-05-mit6172-3"></p><p>  <strong>Why it works</strong> : XOR is its own inverse (x ^ y) ^ y = x</p><p>  <strong>Performance</strong> : poor at exploiting instruction-level parallelism(slower than the original code)</p><h3 id="Minimum-of-Two-Integers"><a href="#Minimum-of-Two-Integers" class="headerlink" title="Minimum of Two Integers"></a>Minimum of Two Integers</h3><ul><li><h4 id="Ordinary-Minimum"><a href="#Ordinary-Minimum" class="headerlink" title="Ordinary Minimum"></a>Ordinary Minimum</h4><pre><code>  r = (x &lt; y) ? x : y;</code></pre><p><strong>Performance</strong> : A mispredicted branch empties the processor pipeline<br><strong>Caveat</strong> : The compiler is usually smart enough to optimize away the unpredictable branch, but maybe not.</p></li><li><h4 id="No-Branch-Minimum"><a href="#No-Branch-Minimum" class="headerlink" title="No-Branch Minimum"></a>No-Branch Minimum</h4><pre><code>  r = y ^ ((x ^ y) &amp; -(x &lt; y));</code></pre><p><img src="min1.png" alt="2023-01-05-mit6172-3"></p></li></ul><h3 id="Merging-Two-Sorted-Arrays"><a href="#Merging-Two-Sorted-Arrays" class="headerlink" title="Merging Two Sorted Arrays"></a>Merging Two Sorted Arrays</h3><p><img src="merge1.png" alt="2023-01-05-mit6172-3"></p><p><strong>if branch is predictable</strong>: most of the time it retrun true, and once it return false you are never going to look at that again.<br>it is predictable = it can do prefetching efficiently</p><h4 id=""><a href="#" class="headerlink" title=" "></a> </h4><h1 id="英语词汇笔记"><a href="#英语词汇笔记" class="headerlink" title="英语词汇笔记"></a>英语词汇笔记</h1><div class="table-container"><table><thead><tr><th>单词</th><th>解释</th></tr></thead><tbody><tr><td>binary</td><td>二进制</td></tr><tr><td>prefix</td><td>前置</td></tr><tr><td>toggle</td><td>切换</td></tr><tr><td>prefetching</td><td>预取</td></tr></tbody></table></div>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Performance Engineering Of Software Systems </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>『MIT 6.172』Lecture 2 Bentley Rules for Optimizing Work</title>
       <link href="/2023/01/07/mit6172-2/"/>
       <url>/2023/01/07/mit6172-2/</url>
