@@ -3,15 +3,22 @@
 
 
     <url>
-        <loc>https://dusign.net/tags/%25E5%258D%259A%25E5%25AE%25A2%25E6%2590%25AD%25E5%25BB%25BA/</loc>
-        <lastmod>2023-01-10T05:53:44.000Z</lastmod>
+        <loc>https://chenjulian.github.io/tags/Scoop/</loc>
+        <lastmod>2023-01-11T06:37:28.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://dusign.net/tags/Performance-Engineering-Of-Software-Systems/</loc>
-        <lastmod>2023-01-08T10:53:18.000Z</lastmod>
+        <loc>https://chenjulian.github.io/tags/%25E5%258D%259A%25E5%25AE%25A2%25E6%2590%25AD%25E5%25BB%25BA/</loc>
+        <lastmod>2023-01-11T06:27:46.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://chenjulian.github.io/tags/Performance-Engineering-Of-Software-Systems/</loc>
+        <lastmod>2023-01-11T06:27:30.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

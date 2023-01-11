@@ -2,34 +2,34 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://dusign.net</loc>
+        <loc>https://chenjulian.github.io</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
     
     <url>
-        <loc>https://dusign.net/about/</loc>
-        <lastmod>2023-01-10T05:58:10.000Z</lastmod>
+        <loc>https://chenjulian.github.io/about/</loc>
+        <lastmod>2023-01-10T06:07:30.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://dusign.net/tags/</loc>
+        <loc>https://chenjulian.github.io/tags/</loc>
         <lastmod>2022-11-10T17:20:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://dusign.net/archive/</loc>
+        <loc>https://chenjulian.github.io/archive/</loc>
         <lastmod>2022-11-10T17:19:40.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://dusign.net/404.html</loc>
+        <loc>https://chenjulian.github.io/404.html</loc>
         <lastmod>2022-11-10T12:50:48.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
