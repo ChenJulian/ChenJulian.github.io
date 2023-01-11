@@ -269,24 +269,34 @@
                 </h3>
                 <div class="post-content-preview">
                     
-搜索scoop search [名称]
+搜索
+
+1scoop search [名称]
 
 添加 bucket
 
 打开网站
 搜索软件并复制 bucket 网址
 
-scoop bucket add [名称] [bucket 网址]
-
-安装scoop install [名称]
-
-卸载scoop uninstall [名称]
-
-打开软件列表scoop list
-
-更新全部软件scoop update *
 
 
+1scoop bucket add [名称] [bucket 网址]
+
+安装
+
+1scoop install [名称]
+
+卸载
+
+1scoop uninstall [名称]
+
+打开软件列表
+
+1scoop list
+
+更新全部软件
+
+1scoop update \*
 ...
                 </div>
             </a>
@@ -734,7 +744,7 @@ Java is compiled to by......
         
 
         
-            <script type="text/javascript" src="/js/mouse-click.js" content='[&#34;😃&#34;,&#34;🥰&#34;,&#34;😍&#34;,&#34;😜&#34;]' color='[&#34;rgb(121,93,179)&#34; ,&#34;rgb(76,180,231)&#34; ,&#34;rgb(184,90,154)&#34;]'></script>
+            <script type="text/javascript" src="/js/mouse-click.js" content='[&quot;😃&quot;,&quot;🥰&quot;,&quot;😍&quot;,&quot;😜&quot;]' color='[&quot;rgb(121,93,179)&quot; ,&quot;rgb(76,180,231)&quot; ,&quot;rgb(184,90,154)&quot;]'></script>
         
 
         <!-- background effects end -->
@@ -744,6 +754,21 @@ Java is compiled to by......
     
         <script src="/js/ribbonDynamic.js"></script>
     
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 
 </html>
